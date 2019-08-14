@@ -1,0 +1,4 @@
+<!--pages/index/main.wxml-->
+<view class="btn-box">
+  <button bindtap="goToList">测试列表渲染</button>
+</view>

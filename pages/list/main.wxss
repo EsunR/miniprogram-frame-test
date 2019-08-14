@@ -1,0 +1,11 @@
+/* pages/list/main.wxss */
+.title-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 20rpx;
+  padding: 0 20rpx;
+}
+.list-container {
+  padding: 20rpx;
+}

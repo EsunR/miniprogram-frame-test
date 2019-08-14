@@ -1,0 +1,6 @@
+<view class="card">
+  <view class="title">{{data.title}}</view>
+  <image src="{{data.detail_img}}" />
+  <view class="content">{{data.detail_content}}</view>
+  <view class="opearte-box"></view>
+</view>

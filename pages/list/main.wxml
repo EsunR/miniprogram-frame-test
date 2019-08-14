@@ -1,0 +1,10 @@
+<!--pages/list/main.wxml-->
+<view>
+  <view class="title-container">
+    <text>成倍增长数据量</text>
+    <switch bindchange="handleSwitchChange"></switch>
+  </view>
+  <view wx:for="{{data}}" wx:key="{{index}}" class="list-container">
+    <card data="{{item}}" />
+  </view>
+</view>
