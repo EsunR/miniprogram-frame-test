@@ -36,22 +36,30 @@ export default {
 
   onPullDownRefresh() {
     setTimeout(() => {
-      console.log("开始刷新");
+      console.log("开始刷新!");
       this.renderStartTime = new Date();
       let push_data = [];
       if (this.multiply) {
         for (let i = 0; i < this.refreshCount; i++) {
           let sort_list_data = shuffle(list_data);
-          this.data = sort_list_data.concat(this.data);
+          push_data = [...push_data, ...sort_list_data];
         }
         this.refreshCount = this.refreshCount * 2;
       } else {
         for (let i = 0; i < 10; i++) {
           let sort_list_data = shuffle(list_data);
-          this.data = sort_list_data.concat(this.data);
+          push_data = [...push_data, ...sort_list_data];
         }
       }
-      wx.stopPullDownRefresh();
+      this.data = [...push_data, ...this.data];
+      this.$nextTick(() => {
+        let time = parseInt(new Date() - this.renderStartTime);
+        console.log(
+          `列表渲染耗时：${time} ms，添加列表数量：${this.data.length -
+            this.dataLength}，当前数据量: ${this.data.length}`
+        );
+        wx.stopPullDownRefresh();
+      });
     }, 500);
   },
 
@@ -66,14 +74,6 @@ export default {
     this.dataLength = this.data.length;
   },
 
-  updated() {
-    let time = parseInt(new Date() - this.renderStartTime);
-    console.log(
-      `列表渲染耗时：${time} ms，添加列表数量：${this.data.length -
-        this.dataLength}，当前数据量: ${this.data.length}`
-    );
-    this.dataLength = this.data.length;
-  }
 };
 </script>
 
