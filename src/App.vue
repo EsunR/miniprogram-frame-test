@@ -1,19 +1,16 @@
 <script>
 export default {
-  created(){
-    console.log('小程序启动了');
+  created() {
+    this.$store.commit("setAppStartTime", new Date());
+    console.log("小程序开始启动：", this.$store.state.appStartTime);
   }
 };
 </script>
 
 <style>
-.container {
+page {
   height: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  padding: 200rpx 0;
-  box-sizing: border-box;
 }
 </style>

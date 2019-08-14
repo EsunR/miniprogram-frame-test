@@ -1,36 +1,31 @@
 <template>
-  <div>
-    <div class="title-container">
-      <text>顶部文字</text>
-    </div>
+  <div class="btn-box">
+    <button @click="goToList">测试列表渲染</button>
   </div>
 </template>
 
 <script>
-import { list_data } from "../../data/list-data";
 export default {
-  data() {
-    return {
-      data: [],
-      refreshCount: 1
-    };
+  mounted() {
+    let time = parseInt(new Date() - this.$store.state.appStartTime);
+    console.log(`小程序启动完毕，耗时：${time}ms`);
   },
-
-  onPullDownRefresh() {
-    setTimeout(() => {
-      for (let i = 0; i < this.refreshCount; i++) {
-        this.data = this.data.concat(list_data);
-      }
-      this.refreshCount *= 2;
-      wx.stopPullDownRefresh();
-    }, 1000);
+  methods: {
+    goToList() {
+      wx.navigateTo({
+        url: "/pages/list/main"
+      });
+    }
   }
 };
 </script>
 
-<style>
-.title-container {
-  text-align: center;
+<style lang="scss" scoped>
+.btn-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
 }
 </style>
 
