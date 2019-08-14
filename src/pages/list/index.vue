@@ -73,10 +73,6 @@ export default {
         this.dataLength}，当前数据量: ${this.data.length}`
     );
     this.dataLength = this.data.length;
-  },
-
-  destroyed() {
-    console.log("awsl");
   }
 };
 </script>
