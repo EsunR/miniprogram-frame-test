@@ -1,42 +1,31 @@
 <template>
-	<view class="content">
-		<image class="logo" src="/static/logo.png"></image>
-		<view>
-			<text class="title">{{title}}</text>
-		</view>
-	</view>
+  <div class="btn-box">
+    <button @click="goToList">测试列表渲染</button>
+  </div>
 </template>
 
 <script>
-	export default {
-		data() {
-			return {
-				title: 'Hello'
-			}
-		},
-		onLoad() {
-
-		},
-		methods: {
-
-		}
-	}
+export default {
+  mounted() {
+    let time = parseInt(new Date() - this.$store.state.appStartTime);
+    console.log(`小程序启动完毕，耗时：${time}ms`);
+  },
+  methods: {
+    goToList() {
+      wx.navigateTo({
+        url: "/pages/list/list"
+      });
+    }
+  }
+};
 </script>
 
-<style>
-	.content {
-		text-align: center;
-		height: 400upx;
-	}
-
-	.logo {
-		height: 200upx;
-		width: 200upx;
-		margin-top: 200upx;
-	}
-
-	.title {
-		font-size: 36upx;
-		color: #8f8f94;
-	}
+<style lang="scss" scoped>
+.btn-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
 </style>
+

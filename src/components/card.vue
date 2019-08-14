@@ -1,0 +1,35 @@
+<template>
+  <div class="card">
+    <div class="title">{{data.title}}</div>
+    <img :src="data.detail_img">
+    <div class="content">{{data.detail_content}}</div>
+    <div class="opearte-box"></div>
+  </div>
+</template>
+
+<script>
+export default {
+  props: ["data"]
+};
+</script>
+
+<style lang="scss" scoped>
+.card {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 5rpx 10rpx rgba(0, 0, 0, 0.3);
+  border-radius: 20rpx;
+  overflow: hidden;
+  img {
+    width: 100%;
+  }
+  .title {
+    background-color: #607d8b;
+    color: white;
+    padding: 10rpx;
+  }
+  .content {
+    padding: 10rpx;
+  }
+}
+</style>

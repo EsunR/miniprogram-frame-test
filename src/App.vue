@@ -1,17 +1,16 @@
 <script>
-	export default {
-		onLaunch: function() {
-			console.log('App Launch')
-		},
-		onShow: function() {
-			console.log('App Show')
-		},
-		onHide: function() {
-			console.log('App Hide')
-		}
-	}
+export default {
+  created() {
+    this.$store.commit("setAppStartTime", new Date());
+    console.log("小程序开始启动：", this.$store.state.appStartTime);
+  }
+};
 </script>
 
 <style>
-	/*每个页面公共css */
+page {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
 </style>
