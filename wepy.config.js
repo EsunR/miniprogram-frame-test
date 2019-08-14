@@ -19,6 +19,9 @@ module.exports = {
     less: {
       compress: prod
     },
+    sass: {
+      'outputStyle': 'compressed'
+    },
     babel: {
       sourceMap: true,
       presets: [

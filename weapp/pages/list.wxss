@@ -1,0 +1,2 @@
+.list-container{width:100%}.list-container .title-container{display:flex;flex-direction:row;justify-content:space-between;margin-top:20rpx;padding:0 20rpx}.list-container .list-container{padding:20rpx}
+

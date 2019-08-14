@@ -1,28 +1,17 @@
-import Vuex from '@wepy/x';
+import Vuex from '@wepy/x'
+import wepy from '@wepy/core';
 
-export default new Vuex.Store({
+wepy.use(Vuex);
+
+const store = new Vuex.Store({
   state: {
-    counter: 0
+    appStartTime: 0
   },
   mutations: {
-    increment (state) {
-      state.counter++;
-    },
-    decrement (state) {
-      state.counter--;
-    }
-  },
-  actions: {
-    increment ({ commit }) {
-      commit('increment');
-    },
-    decrement ({ commit }) {
-      commit('decrement');
-    },
-    incrementAsync ({ commit }) {
-      setTimeout(() => {
-        commit('increment');
-      }, 1000);
+    setAppStartTime(state, time) {
+      state.appStartTime = time
     }
   }
-});
+})
+
+export default store;
