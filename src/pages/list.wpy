@@ -4,8 +4,8 @@
       <text>成倍增长数据量</text>
       <switch bindchange="handleSwitchChange"></switch>
     </div>
-    <div class="list-container" v-for="(item, index) in data" :key="index">
-      <card :data="item"></card>
+    <div class="list-container">
+      <card v-for="(item, index) in listData" :key="index" :data="item"></card>
     </div>
   </div>
 </template>
@@ -16,7 +16,7 @@ import { list_data } from '../data/list-data';
 import { shuffle } from '../utils/tools';
 wepy.page({
   data: {
-    data: [],
+    listData: [],
     refreshCount: 1,
     renderStartTime: new Date(),
     multiply: false
@@ -45,13 +45,13 @@ wepy.page({
           push_data = [...push_data, ...sort_list_data];
         }
       }
-      console.log(this);
-      this.data = [...push_data, ...this.data];
+      let cpData = JSON.parse(JSON.stringify([...push_data, ...this.listData]));
+      this.listData = cpData;
       this.$nextTick(() => {
         let time = parseInt(new Date() - this.renderStartTime);
         console.log(
-          `列表渲染耗时：${time} ms，添加列表数量：${this.data.length -
-            this.dataLength}，当前数据量: ${this.data.length}`
+          `列表渲染耗时：${time} ms，添加列表数量：${this.listData.length -
+            this.dataLength}，当前数据量: ${this.listData.length}`
         );
         wx.stopPullDownRefresh();
       });
@@ -59,7 +59,7 @@ wepy.page({
   },
 
   onUnload() {
-    this.data = [];
+    this.listData = [];
     this.refreshCount = 1;
     this.renderStartTime = new Date();
     this.multiply = false;
@@ -67,7 +67,7 @@ wepy.page({
   },
 
   onLoad() {
-    this.dataLength = this.data.length;
+    this.dataLength = this.listData.length;
   }
 });
 </script>
@@ -83,6 +83,7 @@ wepy.page({
     padding: 0 20rpx;
   }
   .list-container {
+    box-sizing: border-box;
     padding: 20rpx;
   }
 }

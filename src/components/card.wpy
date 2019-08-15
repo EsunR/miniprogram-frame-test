@@ -1,9 +1,8 @@
 <template>
   <div class="card">
-    <div class="title">{{data.title}}</div>
-    <img :src="data.detail_img">
-    <div class="content">{{data.detail_content}}</div>
-    <div class="opearte-box"></div>
+    <text class="title">{{data.title}}</text>
+    <image :src="data.detail_img" />
+    <text class="content">{{data.detail_content}}</text>
   </div>
 </template>
 

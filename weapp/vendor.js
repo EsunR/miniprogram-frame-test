@@ -34,7 +34,7 @@ var process = { env: {} };
    return __wepy_require;
 })([
 /***** module 0 start *****/
-/***** D:\Code\Study\MiniProgram-Fram-Test\wepy\node_modules\@wepy\core\dist\wepy.js *****/
+/***** D:\小程序框架对比\wepy\node_modules\@wepy\core\dist\wepy.js *****/
 function(module, exports, __wepy_require) {'use strict';
 
 // can we use __proto__?
@@ -2591,7 +2591,7 @@ module.exports = wepy;
 
 
 /***** module 1 start *****/
-/***** D:\Code\Study\MiniProgram-Fram-Test\wepy\node_modules\vuex\dist\vuex.common.js *****/
+/***** D:\小程序框架对比\wepy\node_modules\vuex\dist\vuex.common.js *****/
 function(module, exports, __wepy_require) {/**
  * vuex v3.1.1
  * (c) 2019 Evan You
@@ -3608,7 +3608,7 @@ module.exports = index;
 
 
 /***** module 2 start *****/
-/***** D:\Code\Study\MiniProgram-Fram-Test\wepy\node_modules\@wepy\x\dist\index.js *****/
+/***** D:\小程序框架对比\wepy\node_modules\@wepy\x\dist\index.js *****/
 function(module, exports, __wepy_require) {'use strict';
 
 Object.defineProperty(exports, '__esModule', { value: true });

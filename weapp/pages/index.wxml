@@ -1,4 +1,4 @@
 
 <view class="btn-box">
-  <button data-wpy-evt="5-1" bindtap="_proxy">测试列表渲染</button>
+  <button data-wpy-evt="5-0" bindtap="_proxy">测试列表渲染</button>
 </view>

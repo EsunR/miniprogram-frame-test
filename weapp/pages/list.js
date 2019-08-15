@@ -18,7 +18,7 @@ function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 
 _core["default"].page({
   data: {
-    data: [],
+    listData: [],
     refreshCount: 1,
     renderStartTime: new Date(),
     multiply: false
@@ -51,34 +51,27 @@ _core["default"].page({
         }
       }
 
-      console.log(_this);
-      _this.data = [].concat(_toConsumableArray(push_data), _toConsumableArray(_this.data));
+      var cpData = JSON.parse(JSON.stringify([].concat(_toConsumableArray(push_data), _toConsumableArray(_this.listData))));
+      _this.listData = cpData;
 
       _this.$nextTick(function () {
         var time = parseInt(new Date() - _this.renderStartTime);
-        console.log("\u5217\u8868\u6E32\u67D3\u8017\u65F6\uFF1A".concat(time, " ms\uFF0C\u6DFB\u52A0\u5217\u8868\u6570\u91CF\uFF1A").concat(_this.data.length - _this.dataLength, "\uFF0C\u5F53\u524D\u6570\u636E\u91CF: ").concat(_this.data.length));
+        console.log("\u5217\u8868\u6E32\u67D3\u8017\u65F6\uFF1A".concat(time, " ms\uFF0C\u6DFB\u52A0\u5217\u8868\u6570\u91CF\uFF1A").concat(_this.listData.length - _this.dataLength, "\uFF0C\u5F53\u524D\u6570\u636E\u91CF: ").concat(_this.listData.length));
         wx.stopPullDownRefresh();
       });
     }, 500);
   },
   onUnload: function onUnload() {
-    this.data = [];
+    this.listData = [];
     this.refreshCount = 1;
     this.renderStartTime = new Date();
     this.multiply = false;
     console.log('onUnload');
   },
   onLoad: function onLoad() {
-    this.dataLength = this.data.length;
+    this.dataLength = this.listData.length;
   }
-}, {info: {"components":{"card":{"path":"..\\components\\card"}},"on":{}}, handlers: {'6-26': {"change": function proxy () {
-    var $event = arguments[arguments.length - 1];
-    var _vm=this;
-      return (function () {
-        _vm.handleSwitchChange($event)
-      })();
-    
-  }}}, models: {} }, {info: {"components":{"card":{"path":"..\\components\\card"}},"on":{}}, handlers: {'6-26': {"change": function proxy () {
+}, {info: {"components":{"card":{"path":"..\\components\\card"}},"on":{}}, handlers: {'6-0': {"change": function proxy () {
     var $event = arguments[arguments.length - 1];
     var _vm=this;
       return (function () {

@@ -2,9 +2,9 @@
 <view class="list-container">
   <view class="title-container">
     <text>成倍增长数据量</text>
-    <switch data-wpy-evt="6-26" bindchange="_proxy"></switch>
+    <switch data-wpy-evt="6-0" bindchange="_proxy"></switch>
   </view>
-  <view wx:for="{{ data }}" wx:for-index="index" wx:for-item="item" wx:key="index" key="{{ index }}" class="list-container">
-    <card bind_init="_initComponent" data="{{ item }}"></card>
+  <view class="list-container">
+    <card bind_init="_initComponent" wx:for="{{ listData }}" wx:for-index="index" wx:for-item="item" wx:key="index" key="{{ index }}" data="{{ item }}"></card>
   </view>
 </view>

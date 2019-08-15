@@ -1,7 +1,6 @@
 
 <view class="card">
-  <view class="title">{{data.title}}</view>
-  <image src="{{ data.detail_img }}">
-  <view class="content">{{data.detail_content}}</view>
-  <view class="opearte-box"></view>
-</image></view>
+  <text class="title">{{data.title}}</text>
+  <image src="{{ data.detail_img }}"></image>
+  <text class="content">{{data.detail_content}}</text>
+</view>
