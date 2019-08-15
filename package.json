@@ -1,8 +1,8 @@
 {
-  "name": "myApp",
+  "name": "taroConvert",
   "version": "1.0.0",
   "private": true,
-  "description": "taro-test",
+  "description": "",
   "templateInfo": {
     "name": "default",
     "typescript": false,
@@ -40,7 +40,8 @@
     "@tarojs/taro-tt": "1.3.13",
     "@tarojs/taro-weapp": "1.3.13",
     "nervjs": "^1.4.0",
-    "nerv-devtools": "^1.4.0"
+    "nerv-devtools": "^1.4.0",
+    "@tarojs/with-weapp": "^1.3.13"
   },
   "devDependencies": {
     "@types/react": "^16.4.6",
